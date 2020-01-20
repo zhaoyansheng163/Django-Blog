@@ -29,11 +29,21 @@ virtualenv --python=<py3path> venv
 pip install -r requirements.txt
 ```
 
+- xadmin安装
+```
+参考 https://www.cnblogs.com/eastonliu/p/10156475.html
+```
+
 - 数据库迁移
 
 ```
 python manage.py makemigrations
 python manage.py migrate
+python manage.py makemigrations blog
+python manage.py migrate blog
+python manage.py makemigrations comments
+python manage.py migrate comments
+
 ```
 
 - 创建管理员
@@ -56,6 +66,15 @@ python manage.py rebuild_index
 python manage.py collectstatic
 python manage.py compress
 ```
+- 启动和使用
+```
+python manage.py runserver 192.168.101.143:8000
+管理页面 http://192.168.101.143:8000/admin
+新增blog注意：日期格式 2019/10/10 或 2019-10-10  时间格式：10:11
+
+首页 http://192.168.101.143:8000
+```
+
 ------
 
 ### 首页
